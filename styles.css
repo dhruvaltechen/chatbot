@@ -17,31 +17,77 @@ body {
     flex-direction: column;
 }
 
+
 .chat-box {
-    height: 300px;
-    padding: 20px;
-    overflow-y: auto;
-    border-bottom: 2px solid #007bff;
-    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 10px; /* Add padding for better spacing */
 }
+
 .chat-box p {
     margin: 10px 0;
-    padding: 8px 12px;
-    border-radius: 15px;
+    padding: 12px 15px;
+    border-radius: 15px; /* General border radius for all corners */
     max-width: 70%; /* Limit width to 70% */
+    position: relative; /* Required for positioning the pseudo-element */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    font-size: 16px; /* Adjust font size */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+}
+
+.user-icon, .bot-icon {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 20px; /* Adjust icon size */
 }
 
 .chat-box p:nth-child(odd) {
     background-color: #d1ecf1; /* Light blue for user messages */
     align-self: flex-start; /* Align user messages to the left */
     margin-left: auto; /* Push user messages to the left */
+    border-bottom-right-radius: 0; /* Square bottom right corner */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 .chat-box p:nth-child(even) {
     background-color: #f1f1f1; /* Light gray for bot messages */
     align-self: flex-end; /* Align bot messages to the right */
     margin-right: auto; /* Push bot messages to the right */
+    border-bottom-left-radius: 0; /* Square bottom left corner */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
+
+/* Hover effect for interactivity */
+.chat-box p:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.chat-box p:nth-child(even)::after {
+    left: auto; /* Reset for bot messages */
+    right: 10px; /* Position for bot messages */
+    margin-right: -5px; /* Center the triangle */
+    border-color: transparent transparent #f1f1f1 transparent; /* Triangle color matches bot message */
+}
+
+/* Additional styles for better readability */
+.chat-box p {
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+    line-height: 1.5; /* Increase line height for readability */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+
+
+.chat-box p:nth-child(even)::after {
+    left: auto; /* Reset for bot messages */
+    right: 10px; /* Position for bot messages */
+    margin-right: -5px; /* Center the triangle */
+    border-color: transparent transparent #f1f1f1 transparent; /* Triangle color matches bot message */
+}
+
 input[type="text"] {
     width: 87%;
     padding: 15px;
