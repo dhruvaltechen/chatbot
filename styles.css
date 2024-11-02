@@ -176,3 +176,19 @@ button:active {
         opacity: 1;
     }
 }
+
+.chat-header {
+    font-family: 'Montserrat', sans-serif; /* Apply Poppins font */
+    background-color: #007bff; /* Blue background for the header */
+    color: white; /* White text color */
+    padding: 15px; /* Padding for spacing */
+    text-align: center; /* Center the text */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text */
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top of the chat */
+    z-index: 1000; /* Ensure it appears above other elements */
+    border-top-left-radius: 8px; /* Rounded corners */
+    border-top-right-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
