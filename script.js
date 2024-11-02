@@ -1,5 +1,12 @@
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 
+document.getElementById('user-input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action (like a new line)
+        sendMessage(); // Call the sendMessage function
+    }
+});
+
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     if (userInput.trim() === "") return; // Prevent sending empty messages
