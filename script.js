@@ -67,6 +67,8 @@ function getBotResponse(input) {
         return 'Naman! The philosopher! "The only limit to our realization of tomorrow is our doubts of today." What goal are you working towards?';
     } else if (input.includes('devansh')) {
         return 'Devansh! The speedster! Did you know the cheetah is the fastest land animal? What’s your favorite animal?';
+    } else if (input.includes('kuldeep')) {
+        return 'Kuldeepsinh Rajpurohit is an amazing sports player!';
     } else if (input.includes('dhyan')) {
         return 'dhyan! The homework champion! What’s your secret? Here’s a riddle for you: "I speak without a mouth and hear without ears."';
     } else if (input.includes('monisha')) {
