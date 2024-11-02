@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9ecef;
+}
+
+.chat-container {
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    height: 300px;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 2px solid #007bff;
+    background-color: #f8f9fa;
+}
+.chat-box p {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 70%; /* Limit width to 70% */
+}
+
+.chat-box p:nth-child(odd) {
+    background-color: #d1ecf1; /* Light blue for user messages */
+    align-self: flex-start; /* Align user messages to the left */
+    margin-left: auto; /* Push user messages to the left */
+}
+
+.chat-box p:nth-child(even) {
+    background-color: #f1f1f1; /* Light gray for bot messages */
+    align-self: flex-end; /* Align bot messages to the right */
+    margin-right: auto; /* Push bot messages to the right */
+}
+input[type="text"] {
+    width: 87%;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    margin: 9px 10px;
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3; /* Darker blue when focused */
+}
+
+button {
+    padding: 15px;
+    margin: 9px 10px;
+    width: 95%;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active {
+    background-color: #004085; /* Even darker blue when pressed */
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.option-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-btn:hover {
+    background-color: #0056b3;
+}
+
+.loader {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.loader span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background-color: #007bff;
+    animation: loading 1s infinite ease-in-out;
+}
+
+.loader span:nth-child(1) {
+    animation-delay: 0s;
+}
+.loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loading {
+    0%, 80%, 100% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 1;
+    }
+}
