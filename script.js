@@ -3,7 +3,7 @@ document.getElementById('send-btn').addEventListener('click', sendMessage);
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     if (userInput.trim() === "") return; // Prevent sending empty messages
-    addMessageToChat('User: ' + userInput);
+    addMessageToChat('<span class="icon user-icon">👤</span> ' + userInput);
     document.getElementById('user-input').value = '';
 
     // Show loading indicator
@@ -15,7 +15,7 @@ function sendMessage() {
         loadingMessage.remove();
         
         const botResponse = getBotResponse(userInput);
-        addMessageToChat('Bot: ' + botResponse);
+        addMessageToChat('<span class="icon bot-icon">🤖</span> ' + botResponse);
     }, 3000);
 }
 
@@ -36,7 +36,7 @@ function addMessageToChat(message) {
 function addLoaderMessage() {
     const chatBox = document.getElementById('chat-box');
     const loaderElement = document.createElement('p');
-    loaderElement.innerHTML = 'Bot: <span class="loader"><span></span><span></span><span></span></span>';
+    loaderElement.innerHTML = '<span class="icon bot-icon">🤖</span> <span class="loader"><span></span><span></span><span></span></span>';
     chatBox.appendChild(loaderElement);
     chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the bottom
     return loaderElement; // Return the loader element for removal later
